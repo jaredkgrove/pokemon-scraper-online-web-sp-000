@@ -5,6 +5,7 @@ class Pokemon
   def initialize(id: nil, name:, type:, db:, hp: nil)
     self.name = name
     self.type = type
+    self.hp = hp
     @id = id
     @db = db
   end
