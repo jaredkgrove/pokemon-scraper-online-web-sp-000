@@ -24,6 +24,6 @@ class Pokemon
       INSERT INTO pokemon(name, type, hp)
       VALUES (?, ?, ?)
     SQL
-    db.execute(sql, name, type, hp).flatten
+    db.execute(sql, name, type, hp)
   end
 end
