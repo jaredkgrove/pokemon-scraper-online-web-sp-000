@@ -9,8 +9,13 @@ class Pokemon
     @db = db
   end
 
-  def self.find
-
+  def self.find(id, db)
+    sql = <<-SQL 
+      SELECT *
+      FROM pokemon
+      WHERE id = ?
+    SQL 
+    db.execute(sql, id)
   end
 
   def self.save(name, type, db)
