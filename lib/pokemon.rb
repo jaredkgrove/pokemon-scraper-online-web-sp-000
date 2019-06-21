@@ -10,12 +10,12 @@ class Pokemon
   end
 
   def self.find(id, db)
-    sql = <<-SQL 
+    sql = <<-SQL
       SELECT *
       FROM pokemon
       WHERE id = ?
-    SQL 
-    db.execute(sql, id)
+    SQL
+    db.execute(sql, id).collect{|row| self.new(row[0], row[1], row[2])}
   end
 
   def self.save(name, type, db)
